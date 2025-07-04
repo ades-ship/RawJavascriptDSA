@@ -19,3 +19,10 @@ console.log(name);
 // object
 console.log(typeof undefined);  //undefined is of undefined type
 console.log(typeof null);  // null is of object type
+
+
+// null coelsing operator.
+var1=null??80;
+var2=undefined ?? 10 ?? "database connecetion logic";
+console.log(var2);
+console.log(var1);
