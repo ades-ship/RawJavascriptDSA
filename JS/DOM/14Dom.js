@@ -22,3 +22,31 @@ for(let i=0; i<parent.children; i++){
     console.log("hello")
     console.log(parent.children[i].innerHTML)
 }
+
+// create element in the dom tree
+const addDiv=(myContent,backgroundColor)=>{
+    console.log("heelo add div")
+const div=document.createElement('div');
+console.log(div);
+div.className="main";
+div.id="myId";
+div.setAttribute('title',"hi adesh");
+// div.innerHTML="my content"
+div.style.backgroundColor=backgroundColor
+div.style.padding="15px";
+const addtext=document.createTextNode(`${myContent}`);
+div.appendChild(addtext);
+document.body.appendChild(div);
+}
+
+
+const addLanguage=(lang)=>{
+  const li= document.createElement('li');
+   li.appendChild(document.createTextNode(`${lang}`));
+   document.querySelector('.language').appendChild(li);
+
+}
+
+addLanguage("js");
+addLanguage("java");
+addLanguage("html");
