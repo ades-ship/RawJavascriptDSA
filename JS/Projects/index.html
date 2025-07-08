@@ -10,9 +10,13 @@
         padding: 1px;
       }
       form {
+         display: flex;
+        flex-direction: column; 
         text-align: center;
         align-items: center;
-        display: block;
+        justify-content: center;
+       
+        height: 100vh;
         
       }
       div{
@@ -23,7 +27,7 @@
   <body style="background-color: grey">
     <form action="">
       <div>
-        <label for=""><b>Height in kg:</b></label>
+        <label for=""><b>Height in cm:</b></label>
         <input type="text" id="height" class="height"  />
       </div>
 
