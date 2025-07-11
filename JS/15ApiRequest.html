@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        background-color: aqua;
+        height: 200px;
+        width: 200px;
+        display: none;
+      }
+      #followers {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>show profile</h1>
+    <div id="info" class="card"></div>
+    <p id="followers">follower are:</p>
+    <button id="profile">Show profile</button>
+  </body>
+  <script>
+    const info = document.getElementById("info");
+    const followers = document.getElementById("followers");
+    const profile = document.getElementById("profile");
+ const xhr = new XMLHttpRequest();
+        const RequestUrl = "https://api.github.com/users/ades-ship";
+    let isVisibleProfile = false;
+    function toggle() {
+      if (!isVisibleProfile) {
+       
+        function getData() {
+          xhr.open("GET", RequestUrl);
+          xhr.onreadystatechange = () => {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+              const data = JSON.parse(xhr.responseText);
+              console.log(data);
+              info.innerHTML = `
+        <img src="${data.avatar_url} style=" height:50px; width:50px;" />
+   <p>Name: ${data.name|| "NA"}</p>
+   `;
+   followers.innerHTML = `${data.followers}`;
+              info.style.display = "block";
+              followers.style.display = "block";
+              profile.textContent="hide profile"
+              isVisibleProfile=true;
+            }
+          };
+          xhr.send();
+        }
+        getData();
+      } else {
+        info.style.display="none";
+        followers.style.display="none";
+        profile.textContent="show profile";
+        isVisibleProfile=false;
+      }
+    }
+    document.getElementById("info").style.display = "none";
+  document.getElementById("followers").style.display = "none";
+
+    document.getElementById("profile").addEventListener("click", toggle);
+  </script>
+</html>
