@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main" style="background-color: aqua; height: 100vh;">
+      <div id="center">
+        <h1>press key and see magic</h1>
+      </div>
+    </div>
+  </body>
+  <script>
+    const main = document.getElementById("main");
+    const center = document.getElementById("center");
+    window.addEventListener("keydown", (e) => {
+        console.log("key")
+      center.innerHTML = `
+            <table>
+  <tr>
+    <th>key</th>
+    <th>key value</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key===" "?"space":e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+            
+            `;
+    });
+  </script>
+</html>

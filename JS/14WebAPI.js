@@ -47,3 +47,4 @@ const stopCounter=()=>{
     console.log("timer countdown is stopped now...");
     alert("times up.....");
 }
+
