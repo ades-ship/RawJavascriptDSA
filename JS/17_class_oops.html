@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const details={
+    username:"adesh",
+    loginCount:10,
+    isLoginedIn:false
+}
+console.log(details);
+
+function UserDetails(username,loginCount,isLoginedIn){
+    this.username=username;
+    this.loginCount=loginCount;
+    this.isLoginedIn=isLoginedIn;
+    this.greeting=function(){
+        console.log(`welcome to ${username}`)
+    }
+    return this;
+}
+const userone=new UserDetails("adesh",10,true);
+const usertwo=new UserDetails("tanuj",56,false);  // new create the new instance for each users.
+
+console.log(usertwo);
+console.log(usertwo.constructor);
+console.log(userone.greeting())
+
+</script>
+</html>
