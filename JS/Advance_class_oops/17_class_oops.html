@@ -74,5 +74,42 @@ The constructor is called: The constructor function is called with the specified
 The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
 
 */
+
+class User{
+    constructor(username,password,email){
+        this.username=username;
+        this.password=password;
+        this.email=email;
+    }
+    encryptPassword(){
+        return `${this.password}bvg`;
+    }
+    changeName(){
+        return `${this.username.toUpperCase()}`;
+    }
+};
+
+const u4=new User("tanuj","567","tb@aexp.com");
+console.log(u4);
+console.log(u4.encryptPassword());
+
+console.log("-------------")
+
+// function User(username,password,email){
+    // this.username=username;
+    // this.password=password;
+    // this.email=email;f
+// }
+// behind the scene the class works....
+// User.prototype.encryptPassword=function(){
+//     return `${this.password}abc`;
+// }
+// User.prototype.changeName=function(){
+//     return `${this.username.toUpperCase()}`
+// }
+
+// const u3=new User("adesh","123","as@aexp.com");
+// console.log(u3.encryptPassword());
+// console.log(u3.changeName());
 </script>
 </html>

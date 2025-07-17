@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class User{
+        constructor(username){
+            this.username=username;
+        }
+        logMe(){
+            console.log(`username is: ${this.username}`);
+        }
+    }
+    class Teacher extends User{
+        constructor(username,email,password){
+            super(username);
+            this.email=email;
+            this.password=password;
+        }
+        addCourse(){
+            console.log(`new course is added by ${this.username}`);
+        }
+    }
+    const t1=new Teacher("adesh","as@gmail.com","123");
+    t1.logMe();
+    t1.addCourse();
+    const t2=new User("tanuj");
+    t2.logMe();
+</script>
+</html>
